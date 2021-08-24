@@ -1,0 +1,22 @@
+{
+    "name": "automation",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+
+        "stagging": "npx cypress run --headed --config baseUrl='https://www.google.com'",
+        "production": "npx cypress run --headed --config baseUrl = 'https://www.tahoo.com'",
+        "qa": "npx cypress run --headed --config baseUrl = 'https://www.twitter.com'"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cypress": "^7.7.0",
+        "npx": "^10.2.2"
+    },
+    "devDependencies": {
+        "@shelex/cypress-allure-plugin": "^2.8.4",
+        "allure-commandline": "^2.13.8"
+    }
+}

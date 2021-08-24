@@ -1,0 +1,1 @@
+{"uuid":"198825d6-d448-463d-a50e-f8c1462baa6d","children":["5bfa98bb-651a-4228-aea0-8fe9bea1eae5"],"befores":[],"afters":[{"status":"passed","statusDetails":{},"stage":"finished","steps":[],"attachments":[],"parameters":[]}],"name":"Tranversing the DOM in cypress"}

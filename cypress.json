@@ -1,0 +1,14 @@
+{
+
+    "env": {
+        "allure": true
+
+
+    },
+    "screenshotOnRunFailure": true,
+
+
+
+    "uncaught": "exception"
+
+}
