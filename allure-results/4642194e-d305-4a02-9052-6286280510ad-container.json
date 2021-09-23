@@ -1,0 +1,1 @@
+{"uuid":"4642194e-d305-4a02-9052-6286280510ad","children":["5dfb659f-ba86-499f-8b38-a051f137f720","6dde8d77-99df-4cd3-bd0f-8e1f8ac761c2"],"befores":[],"afters":[{"status":"passed","statusDetails":{},"stage":"finished","steps":[],"attachments":[],"parameters":[]}],"name":"varify iframe with cypress"}

@@ -4,7 +4,6 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-
         "stagging": "npx cypress run --headed --config baseUrl='https://www.google.com'",
         "production": "npx cypress run --headed --config baseUrl = 'https://www.tahoo.com'",
         "qa": "npx cypress run --headed --config baseUrl = 'https://www.twitter.com'"

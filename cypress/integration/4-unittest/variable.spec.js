@@ -1,11 +1,13 @@
 describe('variables in cypress', () => {
     it('my first variable test case', () => {
         cy.visit('https://automationteststore.com/index.php?rt=account/login')
-            // const mail = cy.get('#loginFrm_loginname')
-            // mail.type('sanchitadhole27@gmail.com')
-            // const pwd = cy.get('#loginFrm_password')
-            // pwd.type('sanchu05')
-            // this is not right way to right cypress
+
+
+        // const mail = cy.get('#loginFrm_loginname')
+        // mail.type('sanchitadhole27@gmail.com')
+        // const pwd = cy.get('#loginFrm_password')
+        // pwd.type('sanchu05')
+        // this is not right way to right cypress
 
         // cy.get('#loginFrm_loginname').type('sanchitadhole27$@gmail.com')
         // cy.get('#loginFrm_password').type('sanchu')
@@ -28,7 +30,8 @@ describe('variables in cypress', () => {
             expect(el.text()).to.eq(' Account Login')
 
             cy.get('#loginFrm_loginname').then((el) => {
-                el.value = 'sanchit'
+                el.value = 'sanchita'
+
             })
         })
 
