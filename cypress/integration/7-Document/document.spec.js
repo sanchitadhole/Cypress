@@ -1,4 +1,5 @@
 describe('document level validation', () => {
+
     it('validate the url1', () => {
         cy.visit('https://app.recast.studio/auth/login/')
         cy.url().should('contain', 'login')

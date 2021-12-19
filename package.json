@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "stagging": "npx cypress run --headed --config baseUrl='https://www.google.com'",
-        "production": "npx cypress run --headed --config baseUrl = 'https://www.tahoo.com'",
+        "production": "npx cypress run --headed --browser chrome--config baseUrl = 'https://www.tahoo.com'",
         "qa": "npx cypress run --headed --config baseUrl = 'https://www.twitter.com'"
     },
     "author": "",
@@ -16,6 +16,7 @@
     },
     "devDependencies": {
         "@shelex/cypress-allure-plugin": "^2.8.4",
-        "allure-commandline": "^2.13.8"
+        "allure-commandline": "^2.13.8",
+        "cypress-file-upload": "^5.0.8"
     }
 }

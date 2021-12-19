@@ -9,6 +9,8 @@
 
 
 
-    "uncaught": "exception"
+    "uncaught": "exception",
+    "baseUrl": "https://webdriveruniversity.com/",
+    "chromeWebSecurity": false
 
 }

@@ -36,4 +36,6 @@ describe('verify the login functionality', () => {
         cy.url().should('have.include', 'login')
 
     })
+
+    
 })

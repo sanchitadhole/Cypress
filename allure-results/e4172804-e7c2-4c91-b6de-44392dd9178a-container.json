@@ -1,0 +1,1 @@
+{"uuid":"e4172804-e7c2-4c91-b6de-44392dd9178a","children":["4e092654-637d-4c83-836d-762e48b64f7e","17e77839-faa4-49b0-bb8f-be84bd2d92e4","4db904d3-65d9-46e9-b85b-6bab331f579b"],"befores":[],"afters":[{"status":"passed","statusDetails":{},"stage":"finished","steps":[],"attachments":[],"parameters":[]}],"name":"upload a file in cypress testcases "}
