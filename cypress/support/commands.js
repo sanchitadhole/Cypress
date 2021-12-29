@@ -34,6 +34,7 @@
 //     cy.get('button[type = "submit"]').click()
 // })
 
+
 import 'cypress-file-upload';
 
 // Cypress.Commands.add('tablesum', (id, total) => {
@@ -51,37 +52,40 @@ import 'cypress-file-upload';
 
 
 
-// Cypress.Commands.add('GETApi', (method, url, body) => {
+Cypress.Commands.add('GETApi', (method, url, body) => {
 
-//     if (!body) {
-//         cy.request({
-//             method: method,
-//             url: url,
-//             headers: {
-//                 Authorization: "Bearer b60677e5cdd426f129ddb100c41105a4f47e2a1c5721cc618a4030cc4467d94d"
-//             }
-
-
-//         })
-
-//     } else {
-//         cy.request({
-//             method: method,
-//             url: url,
-//             headers: {
-//                 Authorization: "Bearer b60677e5cdd426f129ddb100c41105a4f47e2a1c5721cc618a4030cc4467d94d"
-//             },
-//             body: body
+    if (!body) {
+        cy.request({
+            method: method,
+            url: url,
+            headers: {
+                Authorization: "Bearer b60677e5cdd426f129ddb100c41105a4f47e2a1c5721cc618a4030cc4467d94d"
+            }
 
 
-//         })
-//     }
+        })
+
+    } else {
+        cy.request({
+            method: method,
+            url: url,
+            headers: {
+                Authorization: "Bearer b60677e5cdd426f129ddb100c41105a4f47e2a1c5721cc618a4030cc4467d94d"
+            },
+            body: body
 
 
-// })
+        })
+    }
 
 
-Cypress.Commands.add('get', (method, url) => {
+})
+
+
+
+
+
+Cypress.Commands.add('PutRequest', (method, url) => {
 
     cy.request({
         method: method,
@@ -92,6 +96,17 @@ Cypress.Commands.add('get', (method, url) => {
 
     })
 
+})
 
+Cypress.Commands.add('DELETEApi', (method, url, body) => {
 
+    cy.request({
+        method: method,
+        url: url,
+        headers: {
+            Authorization: "Bearer b60677e5cdd426f129ddb100c41105a4f47e2a1c5721cc618a4030cc4467d94d"
+        },
+
+        body: body
+    })
 })

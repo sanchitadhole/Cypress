@@ -15,8 +15,8 @@
         "npx": "^10.2.2"
     },
     "devDependencies": {
-        "@shelex/cypress-allure-plugin": "^2.8.4",
-        "allure-commandline": "^2.13.8",
+        "@shelex/cypress-allure-plugin": "^2.23.0",
+        "allure-commandline": "^2.17.2",
         "cypress-file-upload": "^5.0.8"
     }
 }
