@@ -110,3 +110,100 @@ Cypress.Commands.add('DELETEApi', (method, url, body) => {
         body: body
     })
 })
+
+Cypress.Commands.add('login', (id, expectedoutput) => {
+    let sum = 0
+    cy.visit('http://www.webdriveruniversity.com/Data-Table/index.html')
+    cy.get(`#${id}`).find('tbody').find('tr').each((row, index) => {
+        if (index != 0) {
+            sum = sum + Number(row.find('td').last().text())
+        }
+    }).then(() => {
+        expect(sum).to.eq(expectedoutput)
+    })
+
+
+
+})
+
+
+Cypress.Commands.add('cricbuzz', (id) => {
+    let sum = 0
+    let arr = []
+    let total = 0
+    let Extras = 0
+
+    cy.get(`#innings_${id}`).find("div[class='cb-col cb-col-100 cb-ltst-wgt-hdr']").first().find(".cb-scrd-itms").find('.text-bold').each(function(score, index, array) {
+        arr.push(Number(score.text()))
+
+    }).then(() => {
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == arr[arr.length - 1]) {
+                total = arr[i]
+
+            } else if (arr[i] == arr[arr.length - 2]) {
+                Extras = arr[i]
+            } else {
+                sum = sum + arr[i]
+            }
+        }
+
+        cy.log(total)
+        cy.log(Extras)
+        cy.log(sum)
+        expect(sum + Extras).to.eql(total)
+    })
+
+
+
+})
+
+
+Cypress.Commands.add('Datepicker', (id) => {
+    let date = new Date()
+
+    // cy.log(date.getDate())
+    date.setDate(date.getDate() + 40)
+        // cy.log(date.getDate())
+    let month = date.toLocaleString('default', { month: 'long' })
+        // cy.log(month)
+    let year = date.getFullYear()
+        // cy.log(year)
+
+    cy.get('._2k43').eq(id).click()
+
+    function selectmonth() {
+        cy.get('.react-datepicker__current-month').last().then((el) => {
+
+            if (!el.text().includes(year)) {
+                // cy.log(el.text())
+                cy.get('.react-datepicker__navigation.react-datepicker__navigation--next').click({ force: true })
+                selectmonth()
+            }
+        })
+
+        .then((el) => {
+            let str = el.text()
+            let str2 = el.text().slice(0, str.length - 5)
+            cy.log(month)
+            if (str2 !== (month)) {
+                // cy.log(el.text())
+                cy.get('.react-datepicker__navigation.react-datepicker__navigation--next').click({ force: true })
+                selectmonth()
+            }
+        })
+    }
+
+    function selectDate() {
+        cy.get('.react-datepicker__month').last().find('div').find('div').not('.react-datepicker__day.react-datepicker__day--disabled').not('.react-datepicker__day.react-datepicker__day--outside-month').each((el) => {
+
+            if (el.text().includes((date.getDate()))) {
+                cy.log(el.text())
+                el.click()
+            }
+        })
+    }
+    selectmonth()
+    selectDate()
+})

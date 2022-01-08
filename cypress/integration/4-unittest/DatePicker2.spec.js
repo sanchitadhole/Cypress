@@ -108,50 +108,50 @@ describe('Red Bus Time Picker', () => {
 
         //////////////////////////////// Return Date //////////////////////////////
 
-        let dt2 = new Date();
-        dt2.setDate(dt2.getDate() + 260)
-            //  dt2.setDate(dt2.getDate() + 150)
+        //         let dt2 = new Date();
+        //         dt2.setDate(dt2.getDate() + 260)
+        //             //  dt2.setDate(dt2.getDate() + 150)
 
-        cy.log('*** Return Date ***')
+        //         cy.log('*** Return Date ***')
 
-        let returnYear = dt2.getFullYear()
-        let returnMonth = dt2.toLocaleString('default', { month: 'short' })
-        let returnDate = dt2.getDate()
-        cy.log(returnYear)
-        cy.log(returnMonth)
-        cy.log(returnDate)
+        //         let returnYear = dt2.getFullYear()
+        //         let returnMonth = dt2.toLocaleString('default', { month: 'short' })
+        //         let returnDate = dt2.getDate()
+        //         cy.log(returnYear)
+        //         cy.log(returnMonth)
+        //         cy.log(returnDate)
 
 
-        cy.get('#return_cal').click({ force: true })
+        //         cy.get('#return_cal').click({ force: true })
 
-        function selectReturnMonthYear() {
-            cy.get('.monthTitle').last().then((el) => {
-                if (!el.text().includes(returnYear)) {
-                    cy.log(el.text())
-                    cy.get('.next').last().click()
-                    selectReturnMonthYear()
-                }
-            }).then((el) => {
-                if (!el.text().includes(returnMonth)) {
-                    cy.log(el.text())
-                    cy.get('.next').last().click()
-                    selectReturnMonthYear()
-                }
-            })
-        }
+        //         function selectReturnMonthYear() {
+        //             cy.get('.monthTitle').last().then((el) => {
+        //                 if (!el.text().includes(returnYear)) {
+        //                     cy.log(el.text())
+        //                     cy.get('.next').last().click()
+        //                     selectReturnMonthYear()
+        //                 }
+        //             }).then((el) => {
+        //                 if (!el.text().includes(returnMonth)) {
+        //                     cy.log(el.text())
+        //                     cy.get('.next').last().click()
+        //                     selectReturnMonthYear()
+        //                 }
+        //             })
+        //         }
 
-        function selectReturnDate() {
-            cy.get('#rb-calendar_return_cal').children().find('td.wd.day').each((el) => {
-                // cy.log(el.text())
-                if (el.text().includes(returnDate)) {
-                    cy.log(el.text())
-                    el.click()
-                }
-            })
-        }
+        //         function selectReturnDate() {
+        //             cy.get('#rb-calendar_return_cal').children().find('td.wd.day').each((el) => {
+        //                 // cy.log(el.text())
+        //                 if (el.text().includes(returnDate)) {
+        //                     cy.log(el.text())
+        //                     el.click()
+        //                 }
+        //             })
+        //         }
 
-        selectReturnMonthYear()
-        selectReturnDate()
+        //         selectReturnMonthYear()
+        //         selectReturnDate()
     })
 
 })
